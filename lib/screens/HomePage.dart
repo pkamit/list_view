@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'favorites.dart';
 import 'messages.dart';
 import 'cart.dart';
+import 'notification.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -96,6 +97,13 @@ class _HomePageState extends State<HomePage> {
                 child: new Icon(Icons.notifications,color: Colors.white,size: 20.0,),
               ),
               title: new Text("Order Notification",),
+              onTap: (){
+                Navigator.of(context).push(
+                    new CupertinoPageRoute(builder: (BuildContext context) {
+                      return  new GirlNotification(title:'Order notification');
+
+                    }));
+              },
             ),
             new ListTile(
               leading: new CircleAvatar(
